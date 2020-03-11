@@ -7,8 +7,6 @@ String tiempo_Salida;
 String tiempo_llegada;
 Boolean estado;
  
-
-
 public Horario(int cod_Horario, int num_bus, String desc_Horario, String tiempo_Salida, String tiempo_llegada,
 		Boolean estado) {
 	this.cod_Horario = cod_Horario;
@@ -19,6 +17,20 @@ public Horario(int cod_Horario, int num_bus, String desc_Horario, String tiempo_
 	this.estado = estado;
 }
 public Horario() {
+	
+}
+public void create_Horarios(Horario horario) {
+	Horario horar =  new Horario();
+	horar = horario;
+}
+public Horario buscar_Horario(int cod_Horario) {
+	Horario horar =  new Horario();
+	return horar;
+}
+public void eliminar_Horario(int cod_Horario) {
+	
+}
+public void editar_horario(int cod_Horario) {
 	
 }
 
