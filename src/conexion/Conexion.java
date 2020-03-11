@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Conexion {
 	static final String URL = "jdbc:postgresql://localhost:5432/projectQA";
-	static final String USER = " ";
+	static final String USER = "postgres";
 	static final String PASS = "12345";
 	 
 	public static Connection crearConexion() throws ClassNotFoundException, SQLException{
