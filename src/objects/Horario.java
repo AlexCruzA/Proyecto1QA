@@ -1,4 +1,4 @@
-package Objects;
+package objects;
 
 public class Horario {
 int cod_Horario;

@@ -1,4 +1,4 @@
-package horariosTest;
+package test;
 
 import org.testng.annotations.Test;
 

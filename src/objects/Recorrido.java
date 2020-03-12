@@ -1,4 +1,4 @@
-package Objects;
+package objects;
 
 public class Recorrido {
 	int cod_Recorrido;
@@ -37,7 +37,7 @@ public class Recorrido {
 		return true;
 	}
 	public boolean editar_Recorrido(int cod_Recorrido) {
-		return true;s
+		return true;
 	}
 	
 	public int getCod_Recorrido() {

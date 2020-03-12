@@ -1,10 +1,11 @@
-package horariosTest;
+package test;
 
 import static org.testng.Assert.assertEquals;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Objects.Horario;
+
+import objects.Horario;
 
 public class horarios {
 	Horario horario;
