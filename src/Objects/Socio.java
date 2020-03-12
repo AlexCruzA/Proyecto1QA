@@ -1,3 +1,4 @@
+package Objects;
 
 public class Socio {
 int cod_Socio;
@@ -24,9 +25,10 @@ public Socio(int cod_Socio, String nombre, String apellidos, String linea, int n
 	this.chofer = chofer;
 	this.estado = estado;
 }
-public void crear_Socio(Socio socio) {
+public boolean crear_Socio(Socio socio) {
 	Socio soc= new Socio();
 	soc= socio;
+	return true;
 }
 public int getCod_Socio() {
 	return cod_Socio;

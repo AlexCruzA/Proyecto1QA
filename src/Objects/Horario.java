@@ -1,3 +1,4 @@
+package Objects;
 
 public class Horario {
 int cod_Horario;
@@ -19,19 +20,20 @@ public Horario(int cod_Horario, int num_bus, String desc_Horario, String tiempo_
 public Horario() {
 	
 }
-public void create_Horarios(Horario horario) {
+public boolean create_Horarios(Horario horario) {
 	Horario horar =  new Horario();
 	horar = horario;
+	return true;
 }
 public Horario buscar_Horario(int cod_Horario) {
 	Horario horar =  new Horario();
 	return horar;
 }
-public void eliminar_Horario(int cod_Horario) {
-	
+public boolean eliminar_Horario(int cod_Horario) {
+	return true;
 }
-public void editar_horario(int cod_Horario) {
-	
+public boolean editar_horario(int cod_Horario) {
+	return true;
 }
 
 public int getCod_Horario() {

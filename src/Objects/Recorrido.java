@@ -1,3 +1,4 @@
+package Objects;
 
 public class Recorrido {
 	int cod_Recorrido;
@@ -23,19 +24,20 @@ public class Recorrido {
 		
 	}
 	
-	public void create_Recorrido(Recorrido recorrido) {
+	public boolean create_Recorrido(Recorrido recorrido) {
 		Recorrido rec =  new Recorrido();
 		rec = recorrido;
+		return true;
 	}
 	public Recorrido buscar_Recorrido(int cod_Recorrido) {
 		Recorrido rec =  new Recorrido();
 		return rec;
 	}
-	public void eliminar_Recorrido(int cod_Recorrido) {
-		
+	public boolean eliminar_Recorrido(int cod_Recorrido) {
+		return true;
 	}
-	public void editar_Recorrido(int cod_Recorrido) {
-		
+	public boolean editar_Recorrido(int cod_Recorrido) {
+		return true;s
 	}
 	
 	public int getCod_Recorrido() {
