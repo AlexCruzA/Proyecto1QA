@@ -45,33 +45,50 @@ public class recorridoCRUD {
         return id;
     }
 	
-	public int updateRecorrido(int cod_Recorrido, int num_Bus, String desc_Recorrido, String tiempo_Demora, String zona_Recorrido,
-			int cantidad_Recorridos, Boolean estado)
-			throws ClassNotFoundException {
-		        String SQL = "UPDATE horario "
-		                + "SET num_Bus = ?, desc_Recorrido = ?, tiempo_Demora = ?, zona_Recorrido = ?, cantidad_Recorridos = ?, estado = ?  "
-		                + "WHERE cod_Recorrido = ?";
-		 
-		        int affectedrows = 0;
-		 
-		        try (Connection conn = Conexion.crearConexion();
-		                PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-		 
-		            pstmt.setInt(1, num_Bus);
-		            pstmt.setString(2, desc_Recorrido);
-		            pstmt.setString(3, tiempo_Demora);
-		            pstmt.setString(4, zona_Recorrido);
-		            pstmt.setInt(5, cantidad_Recorridos);
-		            pstmt.setBoolean(6, estado);
-		        	pstmt.setInt(7, cod_Recorrido);
-
-		 
-		            affectedrows = pstmt.executeUpdate();
-		 
-		        } catch (SQLException ex) {
-		            System.out.println(ex.getMessage());
-		        }
-		        return affectedrows;
-		    }
+	public int updateRecorrido(String cod_Recorrido, String num_Bus, String desc_Recorrido, String tiempo_Demora, String zona_Recorrido,
+	int cantidad_Recorridos, Boolean estado)throws ClassNotFoundException {
+	    String SQL = "UPDATE recorrido "
+	            + "SET num_Bus = ?, desc_Recorrido = ?, tiempo_Demora = ?, zona_Recorrido = ?, cantidad_Recorridos = ?, estado = ? "
+	            + "WHERE cod_Recorrido = ?";
+	 
+	        int affectedrows = 0;
+	 
+	        try (Connection conn = Conexion.crearConexion();
+	                PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+	 
+	            pstmt.setString(1, num_Bus);
+	            pstmt.setString(2, desc_Recorrido);
+	            pstmt.setString(3, tiempo_Demora);
+	            pstmt.setString(4, zona_Recorrido);
+	            pstmt.setInt(5, cantidad_Recorridos);
+	            pstmt.setBoolean(6, estado);
+	        	pstmt.setString(7, cod_Recorrido);
+	
+	 
+	            affectedrows = pstmt.executeUpdate();
+	 
+	        } catch (SQLException ex) {
+	            System.out.println(ex.getMessage());
+	        }
+	        return affectedrows;
+	}
+	
+	public int deleteRecorrido(int id) throws ClassNotFoundException {
+        String SQL = "DELETE FROM horario WHERE cod_Horario = ?";
+ 
+        int affectedrows = 0;
+ 
+        try (Connection conn = Conexion.crearConexion();
+                PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+ 
+            pstmt.setInt(1, id);
+ 
+            affectedrows = pstmt.executeUpdate();
+ 
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return affectedrows;
+    }
 
 }

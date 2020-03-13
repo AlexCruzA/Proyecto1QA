@@ -1,5 +1,8 @@
 package objects;
 
+import DCC.horarioCRUD;
+import DCC.socioCRUD;
+
 public class Socio {
 int cod_Socio;
 String nombre;
@@ -25,9 +28,10 @@ public Socio(int cod_Socio, String nombre, String apellidos, String linea, int n
 	this.chofer = chofer;
 	this.estado = estado;
 }
-public boolean crear_Socio(Socio socio) {
-	Socio soc= new Socio();
-	soc= socio;
+public boolean create_Socio() throws ClassNotFoundException {
+	socioCRUD scrud = new socioCRUD();
+	Socio socio2 = new Socio(1, "Alex", "Cruz", "SC-SJ", 12, 52, "Alonso", "Pedro", true);
+	scrud.insertSocio(socio2);
 	return true;
 }
 public int getCod_Socio() {
