@@ -1,5 +1,7 @@
 package objects;
 
+import DCC.recorridoCRUD;
+
 public class Recorrido {
 	int cod_Recorrido;
 	int num_Bus;
@@ -24,9 +26,10 @@ public class Recorrido {
 		
 	}
 	
-	public boolean create_Recorrido(Recorrido recorrido) {
-		Recorrido rec =  new Recorrido();
-		rec = recorrido;
+	public boolean create_Recorrido() throws ClassNotFoundException {
+		recorridoCRUD rcrud = new recorridoCRUD();
+		Recorrido recorrido2 = new Recorrido(1, 13, "Recorrido ruta 27", "35 minutos", "De Quebradas a Andromeda", 7, true );
+		rcrud.insertRecorrido(recorrido2);
 		return true;
 	}
 	public Recorrido buscar_Recorrido(int cod_Recorrido) {
