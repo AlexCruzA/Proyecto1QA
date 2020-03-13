@@ -8,13 +8,13 @@ import objects.Horario;
 public class HorarioTest {
 	Horario horario;
 	@Test
-	public void crear_Horario_True() {
+	public void crear_Horario_True() throws ClassNotFoundException {
 		horario = new Horario();
 		Horario horario2= new Horario(1, 1, "Horario #1", "5:00pm", "6:00pm", true);
 		Assert.assertEquals(horario.create_Horarios(horario2), true);
 	}
 	@Test
-	public void crear_Horario_False() {
+	public void crear_Horario_False() throws ClassNotFoundException {
 		horario = new Horario();
 		Horario horario2= new Horario(1, 1, "Horario #1", "5:00pm", "6:00pm", true);
 		Assert.assertEquals(horario.create_Horarios(horario2), false);
@@ -30,13 +30,13 @@ public class HorarioTest {
 		Assert.assertEquals(horario.buscar_Horario(1).getCod_Horario(), 2);
 	}
 	@Test
-	public void editar_Horario_True() {
+	public void editar_Horario_True() throws ClassNotFoundException {
 		horario= new Horario(1, 1, "Horario #1", "5:00pm", "6:00pm", true);
 		Horario horario2= new Horario();
 		Assert.assertEquals(horario2.editar_horario(1, horario), true);
 	}
 	@Test
-	public void editar_Horario_False() {
+	public void editar_Horario_False() throws ClassNotFoundException {
 		horario= new Horario(1, 1, "Horario #1", "5:00pm", "6:00pm", true);
 		Horario horario2= new Horario();
 		Assert.assertEquals(horario2.editar_horario(1, horario), false);

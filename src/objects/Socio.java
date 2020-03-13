@@ -13,6 +13,7 @@ int cap_Bus;
 String ayudante;
 String chofer;
 Boolean estado;
+Boolean state=  true;
 
 public Socio() {
 }
@@ -28,16 +29,11 @@ public Socio(int cod_Socio, String nombre, String apellidos, String linea, int n
 	this.chofer = chofer;
 	this.estado = estado;
 }
-public boolean create_Socio() throws ClassNotFoundException {
+
+public boolean crear_Socio(Socio socio) throws ClassNotFoundException {
 	socioCRUD scrud = new socioCRUD();
-	Socio socio2 = new Socio(1, "Alex", "Cruz", "SC-SJ", 12, 52, "Alonso", "Pedro", true);
-	scrud.insertSocio(socio2);
-	return true;
-}
-public boolean crear_Socio(Socio socio) {
-	Socio soc= new Socio();
-	soc= socio;
-	return true;
+	scrud.insertSocio(socio);
+	return state;
 }
 public int getCod_Socio() {
 	return cod_Socio;

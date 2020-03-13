@@ -71,7 +71,10 @@ public class horarioCRUD {
         }
         return affectedrows;
     }
-	
+	Horario h = new Horario();
+	public Horario find_By_Id(int cod_Horario) {
+		return h;
+	}
 	public int deleteHorario(int id) throws ClassNotFoundException {
         String SQL = "DELETE FROM horario WHERE cod_Horario = ?";
  

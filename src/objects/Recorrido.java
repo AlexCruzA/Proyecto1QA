@@ -10,6 +10,7 @@ public class Recorrido {
 	String zona_Recorrido;
 	int cantidad_Recorridos;
 	Boolean estado;
+	Boolean state= true;
 
 	public Recorrido(int cod_Recorrido, int num_bus, String desc_Recorrido, String tiempo_Demora, String zona_Recorrido,
 			int cantidad_Recorridos ,Boolean estado) {
@@ -26,32 +27,34 @@ public class Recorrido {
 		
 	}
 	
-	public boolean create_Recorrido(Recorrido recorrido) {
-		Recorrido rec =  new Recorrido();
-		rec = recorrido;
-		return true;
+	public boolean create_Recorrido(Recorrido recorrido) throws ClassNotFoundException {
+		recorridoCRUD rCrud = new recorridoCRUD();
+		rCrud.insertRecorrido(recorrido);
+		return state;
 	}
 	public Recorrido buscar_Recorrido(int cod_Recorrido) {
-		Recorrido rec =  new Recorrido();
-		return rec;
+		recorridoCRUD rCrud = new recorridoCRUD();
+		return rCrud.find_By_Id(cod_Recorrido);
 	}
-	public boolean eliminar_Recorrido(int cod_Recorrido) {
-		Recorrido h= buscar_Recorrido(cod_Recorrido);
-		h.estado=false;
-		return true;
+	public boolean eliminar_Recorrido(int cod_Recorrido) throws ClassNotFoundException {
+		recorridoCRUD rCrud = new recorridoCRUD();
+		rCrud.deleteRecorrido(cod_Recorrido);
+		return state;
 	}
 	public boolean restablecer_Recorrido(int cod_Recorrido) {
 		Recorrido h= buscar_Recorrido(cod_Recorrido);
 		h.estado=true;
 		return true;
 	}
-	public boolean editar_Recorrido(int cod_Recorrido,Recorrido recorrido_param) {
-		Recorrido r = buscar_Recorrido(cod_Recorrido);
-		
+	public boolean editar_Recorrido(int cod_Recorrido,Recorrido recorrido_param) throws ClassNotFoundException {
+		recorridoCRUD rCrud = new recorridoCRUD();
+	    rCrud.updateRecorrido("1", "1",recorrido_param.getDesc_Recorrido(), recorrido_param.getTiempo_Demora(), 
+	    					  recorrido_param.getZona_Recorrido(), recorrido_param.getCod_Recorrido(), recorrido_param.getEstado());
 		return true;
 	}
 	public Recorrido mostrar_Reporte_Recorrido(int cod_Recorrido) {
-		return buscar_Recorrido(cod_Recorrido);
+		recorridoCRUD rCrud = new recorridoCRUD();
+		return rCrud.find_By_Id(cod_Recorrido);
 	}
 	
 	public int getCod_Recorrido() {

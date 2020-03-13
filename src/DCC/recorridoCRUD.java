@@ -72,7 +72,10 @@ public class recorridoCRUD {
 	        }
 	        return affectedrows;
 	}
-	
+	Recorrido r = new Recorrido();
+	public Recorrido find_By_Id(int recorrido_Param) {
+		return r;
+	}
 	public int deleteRecorrido(int id) throws ClassNotFoundException {
         String SQL = "DELETE FROM horario WHERE cod_Horario = ?";
  
