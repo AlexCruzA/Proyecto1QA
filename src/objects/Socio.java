@@ -34,6 +34,11 @@ public boolean create_Socio() throws ClassNotFoundException {
 	scrud.insertSocio(socio2);
 	return true;
 }
+public boolean crear_Socio(Socio socio) {
+	Socio soc= new Socio();
+	soc= socio;
+	return true;
+}
 public int getCod_Socio() {
 	return cod_Socio;
 }

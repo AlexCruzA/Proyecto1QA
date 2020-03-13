@@ -22,10 +22,9 @@ Boolean estado;
 	public Horario() {
 		
 	}
-	public boolean create_Horarios() throws ClassNotFoundException {
-		horarioCRUD hcrud = new horarioCRUD();
-		Horario horario2= new Horario(1, 1, "Horario #1", "5:00pm", "6:00pm", true);
-		hcrud.insertHorario(horario2);
+	public boolean create_Horarios(Horario horario) {
+		Horario horar =  new Horario();
+		horar = horario;
 		return true;
 	}
 	public Horario buscar_Horario(int cod_Horario) {
@@ -33,13 +32,24 @@ Boolean estado;
 		return horar;
 	}
 	public boolean eliminar_Horario(int cod_Horario) {
+		Horario h= buscar_Horario(cod_Horario);
+		h.estado=false;
 		return true;
 	}
-	public boolean editar_Horario(int cod_Horario, Horario horario) {
+	public boolean restablecer_Horario(int cod_Horario) {
+		Horario h= buscar_Horario(cod_Horario);
+		h.estado=true;
+		return true;
+	}
+	public boolean editar_horario(int cod_Horario,Horario horario_param) {
+		Horario h= buscar_Horario(cod_Horario);
 		
 		return true;
 	}
-	
+	public Horario mostrar_Reporte_Horario(int cod_Horario) {
+		return buscar_Horario(cod_Horario);
+	}
+
 	public int getCod_Horario() {
 		return cod_Horario;
 	}

@@ -26,10 +26,9 @@ public class Recorrido {
 		
 	}
 	
-	public boolean create_Recorrido() throws ClassNotFoundException {
-		recorridoCRUD rcrud = new recorridoCRUD();
-		Recorrido recorrido2 = new Recorrido(1, 13, "Recorrido ruta 27", "35 minutos", "De Quebradas a Andromeda", 7, true );
-		rcrud.insertRecorrido(recorrido2);
+	public boolean create_Recorrido(Recorrido recorrido) {
+		Recorrido rec =  new Recorrido();
+		rec = recorrido;
 		return true;
 	}
 	public Recorrido buscar_Recorrido(int cod_Recorrido) {
@@ -37,10 +36,22 @@ public class Recorrido {
 		return rec;
 	}
 	public boolean eliminar_Recorrido(int cod_Recorrido) {
+		Recorrido h= buscar_Recorrido(cod_Recorrido);
+		h.estado=false;
 		return true;
 	}
-	public boolean editar_Recorrido(int cod_Recorrido) {
+	public boolean restablecer_Recorrido(int cod_Recorrido) {
+		Recorrido h= buscar_Recorrido(cod_Recorrido);
+		h.estado=true;
 		return true;
+	}
+	public boolean editar_Recorrido(int cod_Recorrido,Recorrido recorrido_param) {
+		Recorrido r = buscar_Recorrido(cod_Recorrido);
+		
+		return true;
+	}
+	public Recorrido mostrar_Reporte_Recorrido(int cod_Recorrido) {
+		return buscar_Recorrido(cod_Recorrido);
 	}
 	
 	public int getCod_Recorrido() {
